@@ -1,0 +1,14 @@
+#!/bin/bash
+# Runtime setup: runs every time a Jupyter session starts (before JupyterLab).
+#
+# Set BLABLADOR_API_KEY from the JupyterHub API token that Jupyter4NFDI
+# injects into the session at runtime. If no token is available, keep
+# BLABLADOR_API_KEY empty.
+if [ -n "${JUPYTERHUB_API_TOKEN:-}" ]; then
+    export BLABLADOR_API_KEY="jhub-jupyter4nfdi-prod-${JUPYTERHUB_API_TOKEN}"
+else
+    export BLABLADOR_API_KEY=""
+fi
+
+# Required: hand over to the session command (e.g. jupyter lab).
+exec "$@"

@@ -38,3 +38,7 @@ pip install bia-bob==0.37.2 numpy==2.5.5 scipy==1.18.1 pandas==3.1.1 \
     scikit-learn==1.9.1 scikit-image==0.26.0 seaborn==0.13.2 \
     cellpose==4.2.1.1 stackview==0.19.1
 ```
+
+At session start, the `start` script sets the environment variable
+`BLABLADOR_API_KEY` to `jhub-jupyter4nfdi-prod-$JUPYTERHUB_API_TOKEN`
+(empty if no token is available).
