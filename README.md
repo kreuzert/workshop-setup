@@ -1,4 +1,4 @@
-[![Jupyter4NFDI](https://nfdi-jupyter.de/docs/images/jupyter4nfdi_badge.svg)](https://hub.nfdi-jupyter.de/v2/gh/kreuzert/workshop-setup/main?labpath=%2Fhome%2Fjovyan%2Fwork%2Findex.ipynb)
+[![Jupyter4NFDI](https://nfdi-jupyter.de/docs/images/jupyter4nfdi_badge.svg)](https://hub.nfdi-jupyter.de/v2/gh/kreuzert/workshop-setup/main?labpath=%2Fhome%2Fjovyan%2Findex.ipynb)
 
 # workshop-setup
 
