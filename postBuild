@@ -5,7 +5,7 @@
 set -euo pipefail
 
 ZENODO_FILES="https://zenodo.org/api/records/24033766/files"
-DATA_DIR="docs/data"
+DATA_DIR="data"
 
 mkdir -p "$DATA_DIR"
 cd "$DATA_DIR"
