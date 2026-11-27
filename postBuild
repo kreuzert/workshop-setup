@@ -1,0 +1,34 @@
+#!/bin/bash
+# Download the example data for the Generative AI Satellite Workshop
+# (Helmholtz Imaging Conference 2026) from Zenodo into ./data
+# https://zenodo.org/records/24033766
+set -euo pipefail
+
+ZENODO_FILES="https://zenodo.org/api/records/24033766/files"
+DATA_DIR="data"
+
+mkdir -p "$DATA_DIR"
+cd "$DATA_DIR"
+
+fetch() {
+    curl -fsSL --retry 5 --retry-delay 5 -o "$1" "${ZENODO_FILES}/$1/content"
+}
+
+fetch blobs.tif
+fetch data.csv
+fetch Haase_MRT_tfl3d1.tif
+fetch membrane2d.tif
+fetch timelapse.gif
+fetch timelapse.tif
+
+# Verify md5 checksums from the Zenodo record
+md5sum -c <<EOF
+65789962400f6eb6612e23f7f709420e  blobs.tif
+88b68ed9e6e3d6ba71d2d92892cd0dc9  data.csv
+7e8d6ed19254445191c45c39dc288f45  Haase_MRT_tfl3d1.tif
+af9bb3f21a9e960e719db0132e50960a  membrane2d.tif
+a3bdf29fe1f65dc4a76ad9c16092f76a  timelapse.gif
+51d7200436deab0fb4181f27946ec2fb  timelapse.tif
+EOF
+
+echo "All data files downloaded and verified in $(pwd)"

@@ -1,0 +1,4 @@
+# Data is downloaded during the image build (see postBuild)
+data/
+__pycache__/
+.ipynb_checkpoints/
